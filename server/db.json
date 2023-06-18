@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": 3,
+      "name": "Chauu",
+      "type": "A",
+      "class": "11A8",
+      "GPA": 7
+    },
+    {
+      "id": 4,
+      "name": "Phucccc",
+      "type": "C",
+      "class": "10A4",
+      "GPA": 2.5
+    },
+    {
+      "id": 7,
+      "name": "Dan",
+      "type": "D",
+      "class": "10A1",
+      "GPA": 8
+    },
+    {
+      "id": 8,
+      "name": "Trung",
+      "type": "A",
+      "class": "10A8",
+      "GPA": 9
+    },
+    {
+      "id": "12",
+      "name": "khoi",
+      "type": "A",
+      "class": "10a1",
+      "GPA": "8.5"
+    },
+    {
+      "id": "55",
+      "name": "khoa",
+      "type": "A",
+      "class": "10A5",
+      "GPA": "8.5"
+    }
+  ]
+}

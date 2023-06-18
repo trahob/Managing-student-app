@@ -1,0 +1,17 @@
+<div *ngIf="showPopup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center flex-col">
+    <div class="bg-black opacity-50 absolute top-0 left-0 w-full h-full"></div>
+    <div class="w-[40%] z-50 relative bg-white m-auto py-5 rounded-lg">
+        <p class="text-2xl text-center uppercase">Add Student</p>
+        <form class="p-8" action="">
+            <input class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md mb-5 p-2 w-full" placeholder="ID" type="text" [(ngModel)]="student.id" [ngModelOptions]="{standalone: true}">
+            <input class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md mb-5 p-2 w-full" placeholder="Name" type="text" [(ngModel)]="student.name" [ngModelOptions]="{standalone: true}">
+            <input class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md mb-5 p-2 w-full" placeholder="Type" type="text" [(ngModel)]="student.type" [ngModelOptions]="{standalone: true}">
+            <input class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md mb-5 p-2 w-full" placeholder="Class" type="text" [(ngModel)]="student.class" [ngModelOptions]="{standalone: true}">
+            <input class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md mb-5 p-2 w-full" placeholder="GPA" type="text" [(ngModel)]="student.GPA" [ngModelOptions]="{standalone: true}">
+        </form>
+        <div class="text-right">
+            <button (click)="addStudent()" class="bg-blue-700 hover:bg-blue-400 rounded-md text-white py-2 px-10 mr-5">Add</button>
+            <button (click)="toggleModal(false)" class="bg-red-500 hover:bg-red-300 rounded-md  text-white py-2 px-10 mr-5">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div>
+  <header class="border border-slate-300 drop-shadow-md flex justify-between items-center">
+    <div>
+      <p class="text-[30px] text-[#1d4ed8] py-2 px-10"> Student Management</p>
+    </div>
+    <div class="px-10 w-[30%]">
+        <input #search class="focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border rounded-md p-2 w-full" placeholder="Search by class" type="text" (keyup)="handleSearchInput($event, search.value)" [(ngModel)]="searchText" />
+    </div>
+  </header>
+  <div class="w-full flex justify-between">
+    <div class="w-[30%] p-6 drop-shadow-md bg-slate-100 opacity-90 h-screen rounded-md">
+      <form action="sort">
+        <div class="">
+          <div class="w-full dropdown inline-block relative mb-[85px]">
+            <button class="w-full bg-[#1d4ed8] text-white font-semibold py-2 px-4 rounded flex justify-between items-center">
+              <span class="mr-1">Sort by GPA</span>
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+            </button>
+            <ul class="w-full dropdown-menu absolute hidden text-gray-700 pt-1 z-50">
+              <li class=""><button class="w-full text-left rounded-b bg-white hover:bg-[#ededf0] py-2 px-4 block whitespace-no-wrap" (click)="sortGpaLowToHigh()" >From lowest to highest</button></li>
+              <li class=""><button class="w-full text-left rounded-b bg-white hover:bg-[#ededf0] py-2 px-4 block whitespace-no-wrap" (click)="sortGpaHighTolow()" >From highest to lowest</button></li>
+            </ul>
+          </div>
+          <div class="w-full dropdown inline-block relative mt-5 mb-[85px]">
+            <button class="w-full bg-[#1d4ed8] text-white font-semibold py-2 px-4 rounded flex justify-between items-center">
+              <span class="mr-1">Sort by name</span>
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+            </button>
+            <ul class="w-full dropdown-menu absolute hidden text-gray-700 pt-1">
+              <li class=""><button class="w-full text-left rounded-b bg-white hover:bg-[#ededf0] py-2 px-4 block whitespace-no-wrap" (click)="sortNameLowToHigh()" >From a to z</button></li>
+              <li class=""><button class="w-full text-left rounded-b bg-white hover:bg-[#ededf0] py-2 px-4 block whitespace-no-wrap" (click)="sortNameHighTolow()">From z to a</button></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p class="text-xl mb-5">Filter by GPA</p>
+          <div class="form-check" >
+            <input type="radio" class="peer/draft" name="yearRadios" id="form-check-year-1" value="8" (click)="filterbyGPA('low', $event)">
+            <label class="form-check-label" for="form-check-year-1">GPA lower than 8</label>
+          </div>
+          <div class="form-check" >
+            <input type="radio" class="form-check-input" name="yearRadios" id="form-check-year-2" value="8" (click)="filterbyGPA('high', $event)">
+            <label class="form-check-label" for="form-check-year-2">GPA higher than 8</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="pt-6 w-[65%]">
+      <table class="w-full border-collapse border border-slate-400">
+        <tr class="bg-[#1d4ed8] text-white">
+          <th class="py-2 border border-slate-300">ID</th>
+          <th class="border border-slate-300">name</th>
+          <th class="border border-slate-300">Type</th>
+          <th class="border border-slate-300">Class</th>
+          <th class="border border-slate-300">GPA</th>
+          <th class="border border-slate-300"></th>
+          <th class="border border-slate-300"></th>
+        </tr>
+        <tr class="text-center text-base" *ngFor="let student of students">
+          <td class="py-2 border border-slate-300">{{ student.id }}</td>
+          <td class="border border-slate-300">{{ student.name }}</td>
+          <td class="border border-slate-300">{{ student.type }}</td>
+          <td class="border border-slate-300">{{ student.class }}</td>
+          <td class="border border-slate-300">{{ student.GPA }}</td>
+          <td class="border border-slate-300"><button class="text-blue-700" (click)="getStudentId(student.id)">Update</button></td>
+          <td class="border border-slate-300"><button class="text-blue-700" (click)="deleteStudent(student.id)">Delete</button></td>
+        </tr>
+      </table>
+      <button (click)="toggleModal()" class="bg-blue-700 hover:bg-blue-400 rounded-md text-white py-2 px-10 mr-5 mt-5">Add Student</button>
+      <div>
+        <app-edit-student *ngIf="studentId != 0" (callbackEvent)="closeModal($event)" [studentId]="studentId" />
+        <app-add-student [showPopup]="showPopup" (newItemEvent)="addItem($event)"></app-add-student>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,35 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+.form-check {
+  position: relative;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  padding-left: 1.5rem;
+  input {
+    position: absolute;
+    left: 0;
+    appearance: none;
+    border: 3px solid #4A4B57;
+    width: 18px;
+    height: 18px;
+    content: none;
+    outline: none;
+    margin: 0;
+  }
+  input[type="radio"]:checked::before {
+    content: "\00A0\2713\00A0" !important;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -1px;
+    font-size: 0.875rem;
+    color: #4A4B57 !important;
+    font-weight: bolder;
+    line-height: 0.25rem;
+  }
+
+}
