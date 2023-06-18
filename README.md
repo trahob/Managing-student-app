@@ -10,6 +10,7 @@ This is project about managing student with basic infomation: ID, name, type, cl
 I am using json-serve to fake api so please follow these step:
 Step 1: please install json-serve by using command: 'npm install -g json-server'
 Step 2: please cd to serve folder and run command: 'json-server --watch db.json'
-Step 3: Open a other bash and run 'npm run start' or 'ng serve' to start project
+Step 3: Open a other bash and run 'npm install' to install node_module 
+Step-4: Run 'npm start' or 'ng serve' to start project
 # Thanks for coming to my project
 
