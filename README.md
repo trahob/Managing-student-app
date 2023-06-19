@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Hello welcome to my project
 
 # Introdution
-This is project about managing student with basic infomation: ID, name, type, class and GPA. It has these function to manage like: add Student, delete student, update student and sort student by GPA or name.
+This is project about managing student with basic infomation: ID, name, type, class and GPA. It has these function to manage like: add Student, delete student, update student, sort student by GPA or name, filter and search.
 # Instruction
 I am using json-serve to fake api so please follow these step:
 Step 1: please install json-serve by using command: 'npm install -g json-server'
